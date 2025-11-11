@@ -1,0 +1,628 @@
+fileFormatVersion: 2
+guid: a18cdd3a508999c40beb829bd76250f0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: assetpack objects and rusty_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1672
+        width: 354
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76d9e056072bc1479b26f8125cbb07a
+      internalID: 1648391043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1688
+        width: 145
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc4b68b4b43e1f4e91e2f4b8eac1acd
+      internalID: -519195432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1322
+        width: 194
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e4386cd06d71d47a9cafa61b7085f5
+      internalID: -1112505160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_3
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1400
+        width: 335
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9f5e3c6c449ff4a82761cb8f7312da
+      internalID: -1239246746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_4
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 653
+        width: 1113
+        height: 1012
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee261e33d97b9e489a24bf0119cb253
+      internalID: 478359223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_5
+      rect:
+        serializedVersion: 2
+        x: 2790
+        y: 522
+        width: 243
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1238aa5dfda954181db76d994c2c00
+      internalID: 757006677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_6
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 516
+        width: 285
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ceb43e45f279bf45bd8c37a1fc4da77
+      internalID: -1724828091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_7
+      rect:
+        serializedVersion: 2
+        x: 3762
+        y: 1315
+        width: 441
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591dcd41a6bc5c047aa5f9c572137500
+      internalID: 1123398943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_8
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 687
+        width: 373
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8aebff09341e5a4c80de6ede679e830
+      internalID: 1296925881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_9
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1016
+        width: 167
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f6f1e76d64cc548bde8165e032576d
+      internalID: 697446961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_10
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 526
+        width: 177
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed3b89485352af429ebeec095bf663d
+      internalID: -1957758643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_11
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 695
+        width: 204
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0d53ed752595045ab5e4ec346ab28e
+      internalID: 1572598666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_16
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 383
+        width: 688
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9868d5c2b8bd382438303003953a8ce1
+      internalID: 639289080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_18
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 375
+        width: 903
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde1a4b5101abc8488109c20ed7a7965
+      internalID: 718203470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_20
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 347
+        width: 263
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bb19cfcab0499478e10a87cb7af1aa
+      internalID: 1695884404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_22
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 178
+        width: 89
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fca68167a93964ebd211bf8e6fe7d3
+      internalID: -1462674167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_23
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 180
+        width: 276
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b1405d4df229546a280f1ca3ab513b
+      internalID: 2061949606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_24
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 298
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce5378ad8f35914f8353ea9c20c46d7
+      internalID: -465643450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_25
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 163
+        width: 224
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd128c0f2613714698b665fce050fa7
+      internalID: 1612493664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_26
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 168
+        width: 167
+        height: 101
+      alignment: 9
+      pivot: {x: 0.45086634, y: 0.5812384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bc5888c5f5b04459c6f0534448b457
+      internalID: -2142867300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_30
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 67
+        width: 487
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5be82a25ece9440adf1e65ace754d9
+      internalID: 44131976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects and rusty_31
+      rect:
+        serializedVersion: 2
+        x: 4070
+        y: 48
+        width: 139
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac5aa9979076bb458eb429fe4f7ad01
+      internalID: -1932715869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      assetpack objects and rusty_4: 478359223
+      assetpack objects and rusty_13: -1088413931
+      assetpack objects and rusty_0: 1648391043
+      assetpack objects and rusty_21: -726555930
+      assetpack objects and rusty_17: 869354941
+      assetpack objects and rusty_15: 1418083568
+      assetpack objects and rusty_18: 718203470
+      assetpack objects and rusty_22: -1462674167
+      assetpack objects and rusty_25: 1612493664
+      assetpack objects and rusty_28: -408272491
+      assetpack objects and rusty_31: -1932715869
+      assetpack objects and rusty_3: -1239246746
+      assetpack objects and rusty_11: 1572598666
+      assetpack objects and rusty_6: -1724828091
+      assetpack objects and rusty_9: 697446961
+      assetpack objects and rusty_29: 1856318842
+      assetpack objects and rusty_1: -519195432
+      assetpack objects and rusty_30: 44131976
+      assetpack objects and rusty_2: -1112505160
+      assetpack objects and rusty_27: -1132113480
+      assetpack objects and rusty_24: -465643450
+      assetpack objects and rusty_8: 1296925881
+      assetpack objects and rusty_19: 1787893726
+      assetpack objects and rusty_20: 1695884404
+      assetpack objects and rusty_7: 1123398943
+      assetpack objects and rusty_5: 757006677
+      assetpack objects and rusty_16: 639289080
+      assetpack objects and rusty_23: 2061949606
+      assetpack objects and rusty_12: 1642290278
+      assetpack objects and rusty_14: 1640479261
+      assetpack objects and rusty_26: -2142867300
+      assetpack objects and rusty_10: -1957758643
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

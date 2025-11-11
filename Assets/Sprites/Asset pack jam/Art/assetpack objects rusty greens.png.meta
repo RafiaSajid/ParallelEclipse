@@ -1,0 +1,723 @@
+fileFormatVersion: 2
+guid: 976b2712eb36d784c889b00f92dbe0a2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1672
+        width: 383
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5c01e47a77eb84c88e71391612c718
+      internalID: 1926927532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1688
+        width: 145
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff7c5634375cfe4c9cf961b494f1a3e
+      internalID: 1991122740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1313
+        width: 223
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b303cfd40d1917942a63f8ef681a608e
+      internalID: 504756171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_3
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1362
+        width: 346
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab761fa97ae7f642af819d42071198d
+      internalID: 1091721463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_4
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1360
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9582b1f95f6d04d90ea002b6482520
+      internalID: 1534662478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_5
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 634
+        width: 1257
+        height: 1033
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e418f205782ed47b4e1f8dcf938907
+      internalID: 1708534379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_6
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 512
+        width: 267
+        height: 949
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20e91b88b4f7cc43b1b735ef318c7e4
+      internalID: -2024770685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_7
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 503
+        width: 304
+        height: 973
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8b3201e82b89243a91e83dd85302db
+      internalID: 281503491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_8
+      rect:
+        serializedVersion: 2
+        x: 3619
+        y: 1265
+        width: 584
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815ccca1007eafc44a03e68381e9d781
+      internalID: 1750706516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 670
+        width: 445
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2580874dda6502468965a33b26be27f
+      internalID: 1832732663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_10
+      rect:
+        serializedVersion: 2
+        x: 3884
+        y: 990
+        width: 228
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 594ab34bcfd22124b9197879fc228222
+      internalID: 1632347429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_12
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 526
+        width: 194
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d89f28b0d9bb34babb6633aa7ac6df
+      internalID: 1433203132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_14
+      rect:
+        serializedVersion: 2
+        x: 3798
+        y: 679
+        width: 369
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e294e902cdf954998e6f2c2cef241a
+      internalID: -487309786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_19
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 383
+        width: 688
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a672c92317c81e44d85caf16f390f771
+      internalID: 62695821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_21
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 375
+        width: 903
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415519323cee4ff4d8ce035634d4a2c5
+      internalID: 277269853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_23
+      rect:
+        serializedVersion: 2
+        x: 3811
+        y: 337
+        width: 362
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e456d94fc0c6d438db3d8a082a3cb8
+      internalID: 65509786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_27
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 178
+        width: 171
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb91f4e1c214dca4d868131b1b5abf08
+      internalID: -1801670205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_28
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 109
+        width: 202
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bee1ab442759f6419b258d8e47c64ab
+      internalID: 574981333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_29
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 128
+        width: 93
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3843f00dbb1c55146ba1796aa35ed172
+      internalID: -1364287064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_30
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 121
+        width: 248
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9338a170c634df04788656c8b954963d
+      internalID: -439441327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_31
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 166
+        width: 350
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301f86b99dae74f47bb668d1da763b22
+      internalID: -456364368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_32
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 163
+        width: 282
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b50748891723340874fe54fd2b696b
+      internalID: -530477582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_33
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 182
+        width: 153
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e137f4ce1a5090745929815699677abf
+      internalID: 976073103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_36
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 36
+        width: 565
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c458d1142a578804aace21267b44e076
+      internalID: -614854933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_38
+      rect:
+        serializedVersion: 2
+        x: 4045
+        y: 29
+        width: 179
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2592851df974a05419ccae43dc9d852a
+      internalID: 1948844397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assetpack objects rusty greens_39
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e730542d971066428e398a2d4e5f635
+      internalID: 459682031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      assetpack objects rusty greens_15: 903221434
+      assetpack objects rusty greens_21: 277269853
+      assetpack objects rusty greens_28: 574981333
+      assetpack objects rusty greens_18: -449183310
+      assetpack objects rusty greens_22: -971606974
+      assetpack objects rusty greens_40: -898157191
+      assetpack objects rusty greens_6: -2024770685
+      assetpack objects rusty greens_30: -439441327
+      assetpack objects rusty greens_7: 281503491
+      assetpack objects rusty greens_9: 1832732663
+      assetpack objects rusty greens_14: -487309786
+      assetpack objects rusty greens_31: -456364368
+      assetpack objects rusty greens_17: 366047237
+      assetpack objects rusty greens_12: 1433203132
+      assetpack objects rusty greens_37: -1817288527
+      assetpack objects rusty greens_34: -287160684
+      assetpack objects rusty greens_23: 65509786
+      assetpack objects rusty greens_39: 459682031
+      assetpack objects rusty greens_38: 1948844397
+      assetpack objects rusty greens_33: 976073103
+      assetpack objects rusty greens_41: 263918448
+      assetpack objects rusty greens_1: 1991122740
+      assetpack objects rusty greens_35: 2132472110
+      assetpack objects rusty greens_16: 2003579114
+      assetpack objects rusty greens_3: 1091721463
+      assetpack objects rusty greens_36: -614854933
+      assetpack objects rusty greens_5: 1708534379
+      assetpack objects rusty greens_11: 1219325667
+      assetpack objects rusty greens_19: 62695821
+      assetpack objects rusty greens_4: 1534662478
+      assetpack objects rusty greens_26: -1941704416
+      assetpack objects rusty greens_20: -193464596
+      assetpack objects rusty greens_27: -1801670205
+      assetpack objects rusty greens_25: 1746804116
+      assetpack objects rusty greens_10: 1632347429
+      assetpack objects rusty greens_2: 504756171
+      assetpack objects rusty greens_8: 1750706516
+      assetpack objects rusty greens_24: -620266960
+      assetpack objects rusty greens_13: -1439415903
+      assetpack objects rusty greens_29: -1364287064
+      assetpack objects rusty greens_32: -530477582
+      assetpack objects rusty greens_42: 550666677
+      assetpack objects rusty greens_0: 1926927532
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

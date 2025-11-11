@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - layer 3
+  - layer 4
+  - layer 2
+  - Background
+  - layer 1
+  - NPC
+  - campfire
+  - zombie
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - background
+  - Water
+  - UI
+  - midground
+  - foreground
+  - campEssential
+  - Player
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2289175277
+    locked: 0
+  - name: midground
+    uniqueID: 2427006735
+    locked: 0
+  - name: foreground
+    uniqueID: 1711213073
+    locked: 0
+  - name: campEssential
+    uniqueID: 4005230117
+    locked: 0
+  - name: Player
+    uniqueID: 3942662385
+    locked: 0
+  - name: Zombie
+    uniqueID: 4121698991
+    locked: 0
