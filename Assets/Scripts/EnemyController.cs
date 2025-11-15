@@ -114,21 +114,21 @@ public class EnemyController : MonoBehaviour
             PlayAttack();
 
             // // Try to damage player if it has PlayerHealth
-             var ph = player.GetComponent<playerController>();
+            var ph = player.GetComponent<playerController>();
             if (ph != null)
             {
-                 ph.TakeDamage(damagePerAttack);
+                ph.TakeDamage(damagePerAttack);
             }
             // else
             // {
-                // If player controller handles health, you can call its method instead.
-                 //var pc = player.GetComponent<playerController>(); // example
-                // if (pc != null)
-                // {
-                   // pc.TakeDamage?.Invoke(damagePerAttack); // only if PlayerController exposes such delegate
-                    // If PlayerController has a method, call it directly (e.g., pc.ReceiveDamage(damagePerAttack))
-               // }
-            //}
+            //     //If player controller handles health, you can call its method instead.
+            //    // var pc = player.GetComponent<playerController>(); // example
+            //     if (pc != null)
+            //     {
+            //         pc.TakeDamage(damagePerAttack); // only if PlayerController exposes such delegate
+            //        // If PlayerController has a method, call it directly(e.g., pc.ReceiveDamage(damagePerAttack))
+            //    }
+            // }
 
             // wait attack interval
             yield return new WaitForSeconds(attackInterval);

@@ -20,7 +20,6 @@ namespace ClearSky
         {
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-
         }
 
         private void Update()
@@ -28,7 +27,8 @@ namespace ClearSky
             Restart();
             if (alive)
             {
-
+                Hurt();
+                Die();
                 Attack();
                 Jump();
                 Run();
@@ -96,25 +96,25 @@ namespace ClearSky
                 anim.SetTrigger("attack");
             }
         }
-        // void Hurt()
-        // {
-        //     if (Input.GetKeyDown(KeyCode.Alpha2))
-        //     {
-        //         anim.SetTrigger("hurt");
-        //         if (direction == 1)
-        //             rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
-        //         else
-        //             rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
-        //     }
-        // }
-        // void Die()
-        // {
-        //     if (Input.GetKeyDown(KeyCode.Alpha3))
-        //     {
-        //         anim.SetTrigger("die");
-        //         alive = false;
-        //     }
-        // }
+        void Hurt()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                anim.SetTrigger("hurt");
+                if (direction == 1)
+                    rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
+                else
+                    rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+            }
+        }
+        void Die()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                anim.SetTrigger("die");
+                alive = false;
+            }
+        }
         void Restart()
         {
             if (Input.GetKeyDown(KeyCode.Alpha0))

@@ -27,14 +27,14 @@ public class camerafollow : MonoBehaviour
 {
     [SerializeField] private Transform target; //player transform
     //[SerializeField] private float followSpeed = 6f;
-    [SerializeField] private float xOffset = 23.7f;
+    [SerializeField] private float xOffset = 16f;
     [SerializeField] private float yOffset = 6.5f;
 
     // Camera limits 
-    [SerializeField] private float minX = -9f; // leftmost boundary
+    [SerializeField] private float minX = -4.02f; // leftmost boundary
     [SerializeField] private float maxX = 50f;   // rightmost boundary
-    [SerializeField] private float minY = 0f;     // bottom limit
-    [SerializeField] private float maxY = 20f;    // top limit
+    [SerializeField] private float minY = 1.22f;     // bottom limit
+    [SerializeField] private float maxY = 3f;    // top limit
 
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.3f;

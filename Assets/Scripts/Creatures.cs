@@ -2,23 +2,23 @@ using System.Collections;
 using UnityEngine;
 
 public class Creatures : MonoBehaviour
-{       
+{
     // Prefabs of your enemies (e.g., zombies)
     [SerializeField] private GameObject zombiesPrefab;
-    
+
     [Header("Spawn Settings")]
     [Tooltip("Time before the first enemy spawns.")]
     [SerializeField] private float initialDelay = 5f; // Initial delay before spawning starts
     [Tooltip("Time between subsequent enemy spawns.")]
     [SerializeField] private float spawnInterval = 3f; // Time between spawns (to control frequency)
     [Tooltip("Total duration for which enemies will spawn.")]
-    [SerializeField] private float totalSpawnDuration = 60f; // Spawning stops after 60 seconds
-    
+    [SerializeField] private float totalSpawnDuration = 30f; // Spawning stops after 60 seconds
+
     [Header("Spawn Position")]
     // Min and Max x-coordinates for spawning, assuming y is fixed
     [SerializeField] private float minTras = -8f;
     [SerializeField] private float maxTras = 8f;
-    
+
     private void Start()
     {
         // Start the main spawning coroutine
@@ -41,7 +41,7 @@ public class Creatures : MonoBehaviour
 
             // 4. Select a random enemy prefab
             GameObject prefabToSpawn = zombiesPrefab;
-            
+
             // 5. Instantiate the enemy
             // The enemy's lifecycle (movement, combat, death) is handled by EnemyController
             Instantiate(prefabToSpawn, position, Quaternion.identity);
@@ -79,14 +79,14 @@ public class Creatures : MonoBehaviour
 //     [SerializeField]private float secondSpawn = 0.5f;
 //     [SerializeField]private float minTras;
 //     [SerializeField]private float maxTras;
-    
+
 //     private Animator anim;
 //     // Start is called before the first frame update
 //     void Start()
 //     {
 //         //anim = GetComponenet<Animator>();
 //         StartCoroutine(ZombieSpawn());
-        
+
 //     }
 
 //     // Update is called once per frame
@@ -108,7 +108,7 @@ public class Creatures : MonoBehaviour
 //             }
 //            // }
 //         }
-       
+
 //     }
 
 

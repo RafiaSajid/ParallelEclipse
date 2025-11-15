@@ -12,6 +12,7 @@ TagManager:
   - NPC
   - campfire
   - zombie
+  - health
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Water
   - UI
   - midground
-  - foreground
+  - ground
   - campEssential
   - Player
   - Enemy
