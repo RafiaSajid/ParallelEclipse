@@ -54,27 +54,29 @@ public class EnemyController : MonoBehaviour
 
     private void PlayWalk()
     {
-        animator.ResetTrigger("Attack");
-        animator.ResetTrigger("Hurt");
-        animator.ResetTrigger("Die");
-        animator.SetTrigger("Walk");
+        animator.ResetTrigger("AttackTrigger");
+        animator.ResetTrigger("StunedTrigger");
+        animator.ResetTrigger("DeathTrigger");
+
+        animator.SetTrigger("MoveTrigger");
+
     }
 
     private void PlayAttack()
     {
         //animator.SetBool("Walk", false);
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("AttackTrigger");
     }
 
     private void PlayHurt()
     {
-        animator.SetTrigger("Hurt");
+        animator.SetTrigger("StunedTrigger");
     }
 
     private void PlayDie()
     {
         //animator.SetBool("Walk", false);
-        animator.SetTrigger("Die");
+        animator.SetTrigger("DeathTrigger");
     }
 
     // Using collision enter/exit (non-trigger). Use OnTriggerEnter2D if you prefer triggers.
@@ -119,16 +121,7 @@ public class EnemyController : MonoBehaviour
             {
                 ph.TakeDamage(damagePerAttack);
             }
-            // else
-            // {
-            //     //If player controller handles health, you can call its method instead.
-            //    // var pc = player.GetComponent<playerController>(); // example
-            //     if (pc != null)
-            //     {
-            //         pc.TakeDamage(damagePerAttack); // only if PlayerController exposes such delegate
-            //        // If PlayerController has a method, call it directly(e.g., pc.ReceiveDamage(damagePerAttack))
-            //    }
-            // }
+
 
             // wait attack interval
             yield return new WaitForSeconds(attackInterval);
@@ -170,7 +163,8 @@ public class EnemyController : MonoBehaviour
         // disable collider so it no longer collides with player/bullets
         if (col != null) col.enabled = false;
         // stop movement
-        // if using Rigidbody2D velocity: rb.velocity = Vector2.zero;
+        // if using Rigidbody2D velocity: 
+        rb.velocity = Vector2.zero;
 
         Destroy(gameObject, timeBeforeDestroy);
     }

@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Room-apocalyptic.unity
     guid: a9f5643557ba67142943edc74b014327
   - enabled: 1
+    path: Assets/Scenes/MapAdditive.unity
+    guid: 1e4f96250d78764409cfc2dd549e661f
+  - enabled: 1
     path: Assets/Scenes/Post-apocalyptic Scene.unity
     guid: 720080847314a984b913a43c757a827d
-  - enabled: 0
-    path: Assets/Scenes/School of spirits.unity
-    guid: 3f903ce71c757194f84c12c080c4a91c
   m_configObjects: {}

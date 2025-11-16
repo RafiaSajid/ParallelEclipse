@@ -21,11 +21,11 @@ TagManager:
   - Water
   - UI
   - midground
-  - ground
+  - Ground
   - campEssential
   - Player
   - Enemy
-  - 
+  - NPC
   - 
   - 
   - 
@@ -67,4 +67,7 @@ TagManager:
     locked: 0
   - name: Zombie
     uniqueID: 4121698991
+    locked: 0
+  - name: NPC
+    uniqueID: 2530546915
     locked: 0

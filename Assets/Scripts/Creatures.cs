@@ -1,69 +1,112 @@
 using System.Collections;
+
 using UnityEngine;
 
+
+
 public class Creatures : MonoBehaviour
+
 {
+
     // Prefabs of your enemies (e.g., zombies)
+
     [SerializeField] private GameObject zombiesPrefab;
 
-    [Header("Spawn Settings")]
-    [Tooltip("Time before the first enemy spawns.")]
-    [SerializeField] private float initialDelay = 5f; // Initial delay before spawning starts
-    [Tooltip("Time between subsequent enemy spawns.")]
-    [SerializeField] private float spawnInterval = 3f; // Time between spawns (to control frequency)
-    [Tooltip("Total duration for which enemies will spawn.")]
-    [SerializeField] private float totalSpawnDuration = 30f; // Spawning stops after 60 seconds
 
-    [Header("Spawn Position")]
-    // Min and Max x-coordinates for spawning, assuming y is fixed
-    [SerializeField] private float minTras = -8f;
+
+    [Header("Spawn Settings")]
+
+    [Tooltip("Time before the first enemy spawns.")]
+
+    [SerializeField] private float initialDelay = 10f; // Initial delay before spawning starts
+
+    [Tooltip("Time between subsequent enemy spawns.")]
+
+    [SerializeField] private float spawnInterval = 5f; // Time between spawns (to control frequency)
+
+    [Tooltip("Total duration for which enemies will spawn.")]
+
+    [SerializeField] private float totalSpawnDuration = 25f; // Spawning stops
+
+
+
+    [Header("Spawn Position")]
+
+    // Min and Max x-coordinates for spawning, assuming y is fixed
+
+    [SerializeField] private float minTras = -8f;
+
     [SerializeField] private float maxTras = 8f;
 
+
+
     private void Start()
+
     {
-        // Start the main spawning coroutine
-        StartCoroutine(StartSpawning());
+
+        // Start the main spawning coroutine
+
+        StartCoroutine(StartSpawning());
+
     }
 
+
+
     private IEnumerator StartSpawning()
+
     {
-        // 1. Wait for the initial delay before spawning begins
-        yield return new WaitForSeconds(initialDelay);
+
+        // 1. Wait for the initial delay before spawning begins
+
+        yield return new WaitForSeconds(initialDelay);
+
+
 
         float startTime = Time.time;
 
-        // 2. Loop until the total duration has passed
-        while (Time.time < startTime + totalSpawnDuration)
+
+
+        // 2. Loop until the total duration has passed
+
+        while (Time.time < startTime + totalSpawnDuration)
+
         {
-            // 3. Determine a random spawn position (x-coordinate)
-            float wantedX = Random.Range(minTras, maxTras);
+
+            // 3. Determine a random spawn position (x-coordinate)
+
+            float wantedX = Random.Range(minTras, maxTras);
+
             Vector3 position = new Vector3(wantedX, transform.position.y, transform.position.z);
 
-            // 4. Select a random enemy prefab
-            GameObject prefabToSpawn = zombiesPrefab;
 
-            // 5. Instantiate the enemy
-            // The enemy's lifecycle (movement, combat, death) is handled by EnemyController
-            Instantiate(prefabToSpawn, position, Quaternion.identity);
 
-            // 6. Wait for the set interval before spawning the next enemy
-            yield return new WaitForSeconds(spawnInterval);
+            // 4. Select a random enemy prefab
+
+            GameObject prefabToSpawn = zombiesPrefab;
+
+
+
+            // 5. Instantiate the enemy
+
+            // The enemy's lifecycle (movement, combat, death) is handled by EnemyController
+
+            Instantiate(prefabToSpawn, position, Quaternion.identity);
+
+
+
+            // 6. Wait for the set interval before spawning the next enemy
+
+            yield return new WaitForSeconds(spawnInterval);
+
         }
 
+
+
         Debug.Log("Enemy spawning time has ended.");
+
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

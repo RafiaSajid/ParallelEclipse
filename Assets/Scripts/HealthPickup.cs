@@ -3,7 +3,9 @@ using ClearSky;
 
 public class HealthPickup : MonoBehaviour
 {
+    [SerializeField] GameObject HealthPrefab;
     public int healAmount = 20;
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {
