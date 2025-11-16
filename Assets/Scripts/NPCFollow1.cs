@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPCFollow : MonoBehaviour
 {
+    
     [Header("References")]
     public Transform followPlayer;             // Assign the Player transform
     public Rigidbody2D rb;                     // NPC’s Rigidbody2D
@@ -110,7 +111,7 @@ public class NPCFollow : MonoBehaviour
         if (isJumping && isGrounded)
         {
             animator.SetBool("isJumpUp", false);
-            animator.SetTrigger("jumpDown");
+            animator.SetBool("isJumpDown",true);
             isJumping = false;
         }
 

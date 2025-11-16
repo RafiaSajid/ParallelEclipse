@@ -68,3 +68,6 @@ TagManager:
   - name: Zombie
     uniqueID: 4121698991
     locked: 0
+  - name: NPC
+    uniqueID: 1839498525
+    locked: 0

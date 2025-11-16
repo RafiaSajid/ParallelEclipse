@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8507982c7b1cdb2499021c0f4fb24121, type: 3}
+  m_Name: PuzzlePortalAudioSet
+  m_EditorClassIdentifier: 
+  earthPortalClips:
+  - {fileID: 8300000, guid: 9fe7fdd5d24e62a4fac9c20ce0c6e419, type: 3}
+  spacePortalClips:
+  - {fileID: 8300000, guid: 5241e24daf511384e93f9f7d469ddc8d, type: 3}
+  - {fileID: 8300000, guid: 2d18e80523ebb9745aef93a74209a083, type: 3}
+  - {fileID: 8300000, guid: aecdebf32529a3d40bb193d48a434923, type: 3}
+  - {fileID: 8300000, guid: c549cabf8b3b965468f16011c206e17b, type: 3}
+  - {fileID: 8300000, guid: 9072981f927ca4041abade998924c3e9, type: 3}
