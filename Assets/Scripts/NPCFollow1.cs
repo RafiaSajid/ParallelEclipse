@@ -111,13 +111,17 @@ public class NPCFollow : MonoBehaviour
         if (isJumping && isGrounded)
         {
             animator.SetBool("isJumpUp", false);
+<<<<<<< HEAD
             animator.SetBool("isJumpDown",true);
+=======
+            animator.SetBool("isJumpDown", true);
+>>>>>>> restore-my-work
             isJumping = false;
         }
 
         // Optional Y clamp to avoid drifting vertically
-        float clampedY = Mathf.Clamp(transform.position.y, yClampMin, yClampMax);
-        transform.position = new Vector3(transform.position.x, clampedY, transform.position.z);
+        //float clampedY = Mathf.Clamp(transform.position.y, yClampMin, yClampMax);
+        //transform.position = new Vector3(transform.position.x, clampedY, transform.position.z);
     }
 
     // Just for debugging

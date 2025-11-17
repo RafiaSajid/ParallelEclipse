@@ -21,11 +21,11 @@ TagManager:
   - Water
   - UI
   - midground
-  - ground
+  - Ground
   - campEssential
   - Player
   - Enemy
-  - 
+  - NPC
   - 
   - 
   - 
@@ -69,5 +69,9 @@ TagManager:
     uniqueID: 4121698991
     locked: 0
   - name: NPC
+<<<<<<< HEAD
     uniqueID: 1839498525
+=======
+    uniqueID: 2530546915
+>>>>>>> restore-my-work
     locked: 0

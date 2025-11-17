@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1356746607165955373}
   - component: {fileID: 8595232892209912303}
   - component: {fileID: 1622982939649767210}
-  - component: {fileID: 5664913635738995565}
   - component: {fileID: 3254836829346021412}
+  - component: {fileID: 6072405863124758037}
   m_Layer: 9
   m_Name: Wizard world
   m_TagString: Player
@@ -179,21 +179,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5664913635738995565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861220108884567986}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56602e650fba13548a67e8021b6eefc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePower: 10
-  jumpPower: 10
-  maxHealth: 10
 --- !u!114 &3254836829346021412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +193,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movePower: 10
   jumpPower: 15
+--- !u!114 &6072405863124758037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861220108884567986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8015d0fc3b630d41918967a4762c33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myConversation: {fileID: 0}
 --- !u!1001 &1649626612352071075
 PrefabInstance:
   m_ObjectHideFlags: 0

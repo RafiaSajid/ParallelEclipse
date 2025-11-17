@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     public SceneDarkener sceneDark; // optional reference if you want GameController to trigger darkening itself
 
     [Header("Portal / Transition")]
-    public string nextSceneName = "Post-apocalyptic Scene"; // Set this in the Inspector!
+    public string nextSceneName = "Room-apocalyptic"; // Set this in the Inspector!
     public float delayBeforeLoadingNextScene = 1.0f; // wait after pull completes before loading
     public float optionalFadeDuration = 0.6f; // if using a fade manager or UI fade, use this value
 
@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour
 //     public float timeToStartEclipse = 5f; // Delay before the shadow starts moving
 //     public SceneDarkener sceneDark;
 //     public float delayBeforeLoadingNextScene = 1.0f; // Optional: wait a moment before loading
-    
+
 //     public string nextSceneName = "Post-apocalyptic Scene"; // Set this in the Inspector!
 
 //     void OnEnable()
@@ -145,7 +145,7 @@ public class GameController : MonoBehaviour
 //         SceneDarkener.OnSceneDarkenedComplete -= HandleSceneDarkenedComplete;
 //     }
 
-    
+
 
 //     void Start()
 //     {
@@ -196,8 +196,8 @@ public class GameController : MonoBehaviour
 //     //      // You might want to adjust the delay here based on when the shadow is actually over the moon.
 //     //     sceneDark.StartDarkeningScene();
 //     // }
-    
 
- 
+
+
 // }
 
