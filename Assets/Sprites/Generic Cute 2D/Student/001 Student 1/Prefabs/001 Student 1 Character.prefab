@@ -11,11 +11,16 @@ GameObject:
   - component: {fileID: 8711184764569554572}
   - component: {fileID: 5671074042809019823}
   - component: {fileID: 4822398208353430945}
+<<<<<<< Updated upstream
   - component: {fileID: 4695864630657547485}
   - component: {fileID: 275510483506388952}
   - component: {fileID: 3240870313454386231}
   - component: {fileID: 122513782909533139}
   m_Layer: 11
+=======
+  - component: {fileID: 5901128137092605431}
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: 001 Student 1 Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,8 +39,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3938332, y: 1.3938332, z: 1.3938332}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9149938329668039206}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &5671074042809019823
@@ -46,7 +50,11 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908850870069242641}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_SortingLayerID: -1764420381
+=======
+  m_SortingLayerID: 1839498525
+>>>>>>> Stashed changes
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_SortAtRoot: 0
@@ -71,6 +79,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!70 &4695864630657547485
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -206,10 +215,15 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!1 &2133635629936236740
 GameObject:
+=======
+--- !u!61 &5901128137092605431
+BoxCollider2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3238387738078605223}
@@ -731,3 +745,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: cb0e23ec9b58ceb42aac93e54e27045e, type: 3}
   m_PrefabInstance: {fileID: 7625942607114128376}
   m_PrefabAsset: {fileID: 0}
+=======
+  m_GameObject: {fileID: 1908850870069242641}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+>>>>>>> Stashed changes
