@@ -23,3 +23,11 @@ public class ButtonManager : MonoBehaviour
 	}
 
 }
+
+
+// 21.9
+// 6.5
+// 7.06
+// 25.8
+// 1.22
+// 3.83

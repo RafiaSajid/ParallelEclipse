@@ -2,10 +2,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(AudioSource))]
-/// <summary>
-/// Handles this portal's audio behavior (proximity-based sound)
-/// and notifies the PortalManager when the player enters.
-/// </summary>
 public class TeleportalController : MonoBehaviour
 {
     [HideInInspector]
@@ -17,46 +13,56 @@ public class TeleportalController : MonoBehaviour
 
     private AudioSource _audioSource;
     private PortalManager _manager;
-    private Transform _player;
+    private Transform _player;   // we use player distance for sound
 
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _audioSource.loop = true;
-        _audioSource.playOnAwake = false;
 
-        // Make sure OnTriggerEnter2D actually fires
+        if (_audioSource != null)
+        {
+            _audioSource.playOnAwake = false;
+            _audioSource.loop = true;
+            _audioSource.spatialBlend = 0f; // 2D sound
+        }
+
+        // make sure collider is trigger
         var col = GetComponent<Collider2D>();
-        col.isTrigger = true;
+        if (col != null)
+            col.isTrigger = true;
     }
 
-    /// <summary>
-    /// Called by PortalManager after the portal is created.
-    /// </summary>
-    public void Setup(PortalManager manager, bool correct, AudioClip clip, Transform player)
+    // Called from PortalManager after creating the portal
+    public void Setup(PortalManager manager, bool isCorrect, AudioClip clip, Transform playerTransform)
     {
         _manager = manager;
-        isCorrectPortal = correct;
-        _player = player;
+        isCorrectPortal = isCorrect;
+        _player = playerTransform;
 
-        _audioSource.clip = clip;
-        // Do NOT play here – we play/stop based on distance in Update().
+        if (_audioSource == null)
+            _audioSource = GetComponent<AudioSource>();
+
+        if (_audioSource != null)
+        {
+            _audioSource.clip = clip;
+            // don't play here; Update will start/stop it depending on distance
+        }
     }
 
     private void Update()
     {
-        if (_player == null || _audioSource.clip == null)
+        if (_audioSource == null || _player == null || _audioSource.clip == null)
             return;
 
         float distance = Vector2.Distance(_player.position, transform.position);
 
-        // Player close enough → play sound
+        // Inside radius → play
         if (distance <= soundRadius)
         {
             if (!_audioSource.isPlaying)
                 _audioSource.Play();
         }
-        // Player far → stop sound
+        // Outside radius → stop
         else
         {
             if (_audioSource.isPlaying)
@@ -66,8 +72,8 @@ public class TeleportalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Only react to the player collider
-        if (!other.CompareTag("Player"))
+        // Player OR NPC entering the portal
+        if (!other.CompareTag("Player") && !other.CompareTag("NPC"))
             return;
 
         if (_manager != null)

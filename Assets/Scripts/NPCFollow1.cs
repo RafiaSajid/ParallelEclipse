@@ -4,6 +4,144 @@ using UnityEngine;
 
 public class NPCFollow : MonoBehaviour
 {
+    [Header("References")]
+    public Transform followPlayer;
+    public Rigidbody2D rb;
+    public Animator animator;
+
+    [Header("Follow Settings")]
+    public float speed = 2f;
+    public float followDistance = 2.5f;   // stop following when closer than this
+
+    [Header("Jump Settings")]
+    public Transform groundCheck;
+    public float checkRadius = 0.1f;
+    public LayerMask groundLayer;
+    public float jumpForce = 6f;
+    public float jumpCooldown = 1f;
+
+    private bool isGrounded;
+    private float jumpTimer;
+    private bool isJumping;
+    private Vector3 initialScale;
+
+    void Start()
+    {
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        if (animator == null) animator = GetComponent<Animator>();
+
+        initialScale = transform.localScale;
+
+        if (followPlayer != null)
+        {
+            Collider2D npcCol = GetComponent<Collider2D>();
+            Collider2D playerCol = followPlayer.GetComponent<Collider2D>();
+            if (npcCol && playerCol)
+                Physics2D.IgnoreCollision(npcCol, playerCol, true);
+        }
+
+        StartCoroutine(InitializeAfterPhysics());
+    }
+
+    IEnumerator InitializeAfterPhysics()
+    {
+        yield return new WaitForFixedUpdate();
+        animator.SetTrigger("idle");
+    }
+
+    void FixedUpdate()
+    {
+        if (followPlayer == null) return;
+
+        // === Ground check ===
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
+        float xDiff = followPlayer.position.x - transform.position.x;
+        float yDiff = followPlayer.position.y - transform.position.y;
+
+        // === Horizontal follow ===
+        if (Mathf.Abs(xDiff) > followDistance)
+        {
+            // Move horizontally
+            rb.velocity = new Vector2(Mathf.Sign(xDiff) * speed, rb.velocity.y);
+
+            // Flip sprite
+            transform.localScale = new Vector3(Mathf.Sign(xDiff) * Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
+
+            animator.SetBool("isRun", true);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            animator.SetBool("isRun", false);
+        }
+
+        // === Jump logic ===
+        jumpTimer -= Time.fixedDeltaTime;
+
+        if (isGrounded && jumpTimer <= 0f)
+        {
+            // Example: only jump if player is higher and roughly above NPC
+            if (yDiff > 1f && Mathf.Abs(xDiff) < 1.0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                isJumping = true;
+                animator.SetBool("isJumpUp", true);
+                animator.SetBool("isJumpDown", false);
+                jumpTimer = jumpCooldown;
+            }
+        }
+    }
+
+    void LateUpdate()
+    {
+        // Keep X scale clean
+        float dir = Mathf.Sign(transform.localScale.x);
+        transform.localScale = new Vector3(dir * Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
+
+        // Use velocity to manage jump up / down flags
+        if (!isGrounded)
+        {
+            if (rb.velocity.y > 0.1f)
+            {
+                animator.SetBool("isJumpUp", true);
+                animator.SetBool("isJumpDown", false);
+            }
+            else if (rb.velocity.y < -0.1f)
+            {
+                animator.SetBool("isJumpUp", false);
+                animator.SetBool("isJumpDown", true);
+            }
+        }
+        else
+        {
+            // Landed
+            if (isJumping)
+            {
+                isJumping = false;
+            }
+
+            animator.SetBool("isJumpUp", false);
+            animator.SetBool("isJumpDown", false);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+        }
+    }
+}
+
+/*using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NPCFollow : MonoBehaviour
+{
     
     [Header("References")]
     public Transform followPlayer;             // Assign the Player transform
@@ -110,13 +248,11 @@ public class NPCFollow : MonoBehaviour
         // If landed from jump, switch to jump-down or idle
         if (isJumping && isGrounded)
         {
+             isJumping = false;
             animator.SetBool("isJumpUp", false);
-<<<<<<< HEAD
-            animator.SetBool("isJumpDown",true);
-=======
             animator.SetBool("isJumpDown", true);
->>>>>>> restore-my-work
-            isJumping = false;
+           
+            animator.SetTrigger("idle");
         }
 
         // Optional Y clamp to avoid drifting vertically
@@ -133,7 +269,7 @@ public class NPCFollow : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
     }
-}
+}*/
 
 
 

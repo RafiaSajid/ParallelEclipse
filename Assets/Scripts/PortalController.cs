@@ -100,34 +100,8 @@ public class PortalController : MonoBehaviour
         // 3) Optional small delay then start pulling player  
         if (pullDelayAfterGlow > 0f) yield return new WaitForSeconds(pullDelayAfterGlow);
 
-        // Find player in scene (you can alternatively assign a reference)  
-        // var player = GameObject.FindWithTag("Player");
-        // if (player != null)
-        // {
-        //     var pullComp = player.GetComponent<PlayerPortalPull>();
-        //     if (pullComp != null && pullTarget != null)
-        //     {
-        //         // Use PlayerPortalPull's coroutine (preferred)  
-        //         yield return StartCoroutine(pullComp.PullToTargetCoroutine(pullTarget.position, pullDuration));
-        //     }
-        //     else if (pullTarget != null)
-        //     {
-        //         // Fallback:
-        //         // continuation / fallback inside PortalController.PortalActivationSequence()
+        // Pull player to portal center
 
-        //         // Fallback: simple direct lerp of player's position (NOT recommended if player uses physics)
-        //         var startPos = player.transform.position;
-        //         var endPos = pullTarget.position;
-        //         float t = 0f;
-        //         while (t < pullDuration)
-        //         {
-        //             t += Time.deltaTime;
-        //             float u = Mathf.SmoothStep(0f, 1f, t / pullDuration);
-        //             player.transform.position = Vector3.Lerp(startPos, endPos, u);
-        //             yield return null;
-        //         }
-        //         player.transform.position = endPos;
-        //     }
 
         // 4) Portal pull complete -> notify and optionally play an effect
         OnPortalPullComplete?.Invoke();

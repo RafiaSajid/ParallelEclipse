@@ -1,84 +1,126 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Spawns portals, assigns audio, and handles teleport behavior.
-/// Creation details and selection strategy are delegated to helper abstractions.
-/// </summary>
 public class PortalManager : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] private GameObject portalPrefab;       // Teleportal prefab
-    [SerializeField] private List<Transform> spawnPoints;   // Portal spawn positions
-    [SerializeField] private PortalAudioSet audioSet;       // Earth + space sounds
+    [SerializeField] private GameObject portalPrefab;
+    [SerializeField] private PortalAudioSet audioSet;
+
+    [Header("Portal Spawn Area (World Space)")]
+    [SerializeField] private float spawnMinX = -37f;
+    [SerializeField] private float spawnMaxX = 11f;
+    [SerializeField] private float spawnMinY = 2f;
+    [SerializeField] private float spawnMaxY = 4.4f;
+
+    [Header("Portal Settings")]
+    [SerializeField] private int portalCount = 5;            // 5–6 portals
+    [SerializeField] private float minPortalDistance = 3f;   // distance between portals
+    [SerializeField] private int maxTriesPerPortal = 50;     // safety for random search
 
     [Header("Characters")]
-    [SerializeField] private Transform PlayerPrefab ;              // Player transform
-    [SerializeField] private Transform npc;                 // NPC transform that follows player
+    [SerializeField] private Transform PlayerPrefab;   // actually your player instance
+    [SerializeField] private Transform npc;
 
     [Header("Teleport Targets")]
-    [SerializeField] private Transform realWorldExit;       // Where correct portal sends them
+    [SerializeField] private Transform realWorldExit;
     [SerializeField] private Vector2 exitOffsetFromPortal = new Vector2(0f, 1f);
 
     private readonly List<TeleportalController> _portals = new List<TeleportalController>();
+    private readonly List<Vector3> _spawnPositions = new List<Vector3>();
+
     private TeleportalController _correctPortal;
-
-    // Factory + Strategy
-    private IPortalFactory _portalFactory;
-    private ICorrectPortalSelector _correctPortalSelector;
-
-    private void Awake()
-    {
-        // Build concrete helpers
-        _portalFactory = new PrefabPortalFactory(portalPrefab);
-        _correctPortalSelector = new RandomCorrectPortalSelector();
-    }
 
     private void Start()
     {
-        
         SpawnPortals();
+    }
+
+    // Optional: shows the spawn area as a yellow box when the object is selected
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+
+        float centerX = (spawnMinX + spawnMaxX) * 0.5f;
+        float centerY = (spawnMinY + spawnMaxY) * 0.5f;
+        float sizeX = Mathf.Abs(spawnMaxX - spawnMinX);
+        float sizeY = Mathf.Abs(spawnMaxY - spawnMinY);
+
+        Vector3 center = new Vector3(centerX, centerY, 0f);
+        Vector3 size = new Vector3(sizeX, sizeY, 0f);
+
+        Gizmos.DrawWireCube(center, size);
     }
 
     private void SpawnPortals()
     {
         _portals.Clear();
+        _spawnPositions.Clear();
 
-        
-
-        // Create portals via factory
-        for (int i = 0; i < 5; i++)
-{
-    Vector3 randomPos = new Vector3(
-        Random.Range(-37f, 11f),
-        Random.Range(2f, 4.4f),
-        0f
-    );
-
-    GameObject spawn = new GameObject("RandomSpawnPoint_" + i);
-    //this creates a new empty GameObject in the scene.
-
-//It basically simulates what you would manually create with:
-
-//Right-click → Create Empty
-    spawn.transform.position = randomPos;
-
-    spawnPoints.Add(spawn.transform);
-}
-
-        
-        foreach (Transform sp in spawnPoints)
+        if (portalPrefab == null)
         {
-            TeleportalController portal = _portalFactory.CreatePortal(sp.position);
+            Debug.LogError("PortalManager: portalPrefab is not assigned.");
+            return;
+        }
+
+        if (spawnMaxX <= spawnMinX || spawnMaxY <= spawnMinY)
+        {
+            Debug.LogError("PortalManager: Spawn area values are invalid. Check spawnMin/Max X/Y.");
+            return;
+        }
+
+        // Pick portalCount random positions inside the spawn rectangle, with distance constraint
+        for (int i = 0; i < portalCount; i++)
+        {
+            bool foundSpot = false;
+
+            for (int tries = 0; tries < maxTriesPerPortal; tries++)
+            {
+                // Random position in your chosen world-space area
+                float x = Random.Range(spawnMinX, spawnMaxX);
+                float y = Random.Range(spawnMinY, spawnMaxY);
+                Vector3 worldPos = new Vector3(x, y, 0f);
+
+                // Check distance to previously chosen positions
+                bool tooClose = false;
+                foreach (Vector3 pos in _spawnPositions)
+                {
+                    if (Vector3.Distance(worldPos, pos) < minPortalDistance)
+                    {
+                        tooClose = true;
+                        break;
+                    }
+                }
+
+                if (tooClose)
+                    continue;
+
+                // Good position
+                _spawnPositions.Add(worldPos);
+                foundSpot = true;
+                break;
+            }
+
+            if (!foundSpot)
+            {
+                Debug.LogWarning($"PortalManager: Could not find valid spot for portal {i}");
+            }
+        }
+
+        // Instantiate portals at chosen positions
+        foreach (Vector3 pos in _spawnPositions)
+        {
+            TeleportalController portal =
+                Instantiate(portalPrefab, pos, Quaternion.identity)
+                .GetComponent<TeleportalController>();
+
             if (portal != null)
-
-
             {
                 _portals.Add(portal);
             }
             else
             {
-                Debug.LogWarning("PortalManager: Failed to create portal at " + sp.name);
+                Debug.LogWarning("PortalManager: Failed to create portal - no TeleportalController on prefab?");
             }
         }
 
@@ -88,16 +130,12 @@ public class PortalManager : MonoBehaviour
             return;
         }
 
-        // Strategy: choose which portal is correct
-        _correctPortal = _correctPortalSelector.SelectCorrectPortal(_portals);
+        // Pick one portal as the correct one
+        _correctPortal = _portals[Random.Range(0, _portals.Count)];
 
-        // Assign correct/wrong audio to each portal
         AssignPortalAudio();
     }
 
-    /// <summary>
-    /// Assigns audio and configuration to each portal.
-    /// </summary>
     private void AssignPortalAudio()
     {
         if (audioSet == null)
@@ -145,9 +183,226 @@ public class PortalManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Called by a portal when the player enters it.
-    /// </summary>
+    public void PlayerEnteredPortal(TeleportalController portal)
+    {
+        if (portal == null)
+            return;
+
+        if (portal == _correctPortal)
+        {
+            TeleportToRealWorld();
+        }
+        else
+        {//wrong portal
+            TeleportToRandomOtherPortal(portal);
+        }
+    }
+
+    private void TeleportToRealWorld()
+    {
+        if (realWorldExit == null)
+        {
+            Debug.LogWarning("PortalManager: Real world exit is not set.");
+            return;
+        }
+
+        Vector3 pos = realWorldExit.position;
+
+        if (PlayerPrefab != null)
+            PlayerPrefab.position = pos;
+
+        if (npc != null)
+            npc.position = pos + (Vector3)exitOffsetFromPortal;
+    }
+
+    private void TeleportToRandomOtherPortal(TeleportalController enteredPortal)
+    {
+        if (_portals.Count <= 1 || enteredPortal == null)
+            return;
+
+        List<TeleportalController> others = new List<TeleportalController>(_portals);
+        others.Remove(enteredPortal);
+
+        if (others.Count == 0)
+            return;
+
+        TeleportalController destinationPortal = others[Random.Range(0, others.Count)];
+        if (destinationPortal == null) return;
+
+        Vector3 pos = destinationPortal.transform.position + (Vector3)exitOffsetFromPortal;
+
+        if (PlayerPrefab != null)
+            PlayerPrefab.position = pos;
+
+        if (npc != null)
+            npc.position = pos;
+    }
+}
+
+/*using System.Collections.Generic;
+using UnityEngine;
+
+
+public class PortalManager : MonoBehaviour
+{
+    [Header("Setup")]
+    [SerializeField] private GameObject portalPrefab;
+    [SerializeField] private PortalAudioSet audioSet;
+
+    [Header("Portal Spawn Area (World Space)")]
+[SerializeField] private float spawnMinX = -37f;
+[SerializeField] private float spawnMaxX = 11f;
+[SerializeField] private float spawnMinY = 2f;
+[SerializeField] private float spawnMaxY = 4.4f;
+
+
+    [Header("Tilemap Area for Portals")]
+    [SerializeField] private int portalCount = 5;            // 5–6 portals
+    [SerializeField] private float minPortalDistance = 3f;   // distance between portals
+    [SerializeField] private int maxTriesPerPortal = 50;     // safety for random search
+
+    [Header("Characters")]
+    [SerializeField] private Transform PlayerPrefab;
+    [SerializeField] private Transform npc;
+
+    [Header("Teleport Targets")]
+    [SerializeField] private Transform realWorldExit;
+    [SerializeField] private Vector2 exitOffsetFromPortal = new Vector2(0f, 1f);
+
+    private readonly List<TeleportalController> _portals = new List<TeleportalController>();
+    private readonly List<Vector3> _spawnPositions = new List<Vector3>();
+
+    private TeleportalController _correctPortal;
+
+ 
+
+    private void Awake()
+    {
+      
+    }
+
+    private void Start()
+    {
+        SpawnPortals();
+    }
+
+    private void SpawnPortals()
+    {
+        _portals.Clear();
+        _spawnPositions.Clear();
+
+      
+for (int i = 0; i < portalCount; i++)
+{
+    bool foundSpot = false;
+
+    for (int tries = 0; tries < maxTriesPerPortal; tries++)
+    {
+        // Random position in your chosen world-space area
+        float x = Random.Range(spawnMinX, spawnMaxX);
+        float y = Random.Range(spawnMinY, spawnMaxY);
+        Vector3 worldPos = new Vector3(x, y, 0f);
+
+        // Check distance to previously chosen positions
+        bool tooClose = false;
+        foreach (Vector3 pos in _spawnPositions)
+        {
+            if (Vector3.Distance(worldPos, pos) < minPortalDistance)
+            {
+                tooClose = true;
+                break;
+            }
+        }
+
+        if (tooClose)
+            continue;
+
+        // Good position
+        _spawnPositions.Add(worldPos);
+        foundSpot = true;
+        break;
+    }
+
+    if (!foundSpot)
+    {
+        Debug.LogWarning($"PortalManager: Could not find valid spot for portal {i}");
+    }
+}
+
+        // Instantiate portals at chosen positions
+        foreach (Vector3 pos in _spawnPositions)
+        {
+            TeleportalController portal = 
+               Instantiate(portalPrefab, pos, Quaternion.identity).GetComponent<TeleportalController>();
+
+            if (portal != null)
+            {
+                _portals.Add(portal);
+            }
+            else
+            {
+                Debug.LogWarning("PortalManager: Failed to create portal.");
+            }
+        }
+
+        if (_portals.Count == 0)
+        {
+            Debug.LogWarning("PortalManager: No portals were created.");
+            return;
+        }
+
+        _correctPortal = _portals[Random.Range(0, _portals.Count)];
+
+        AssignPortalAudio();
+    }
+
+    private void AssignPortalAudio()
+    {
+        if (audioSet == null)
+        {
+            Debug.LogWarning("PortalManager: No audio set assigned.");
+            return;
+        }
+
+        if (PlayerPrefab == null)
+        {
+            Debug.LogWarning("PortalManager: Player transform not assigned.");
+            return;
+        }
+
+        foreach (TeleportalController portal in _portals)
+        {
+            if (portal == null) continue;
+
+            bool isCorrect = (portal == _correctPortal);
+            AudioClip clip = GetClipForPortal(isCorrect);
+
+            portal.Setup(this, isCorrect, clip, PlayerPrefab);
+        }
+    }
+
+    private AudioClip GetClipForPortal(bool isCorrect)
+    {
+        if (audioSet == null) return null;
+
+        if (isCorrect)
+        {
+            if (audioSet.earthPortalClips == null || audioSet.earthPortalClips.Length == 0)
+                return null;
+
+            int idx = Random.Range(0, audioSet.earthPortalClips.Length);
+            return audioSet.earthPortalClips[idx];
+        }
+        else
+        {
+            if (audioSet.spacePortalClips == null || audioSet.spacePortalClips.Length == 0)
+                return null;
+
+            int idx = Random.Range(0, audioSet.spacePortalClips.Length);
+            return audioSet.spacePortalClips[idx];
+        }
+    }
+
     public void PlayerEnteredPortal(TeleportalController portal)
     {
         if (portal == null)
@@ -175,13 +430,9 @@ public class PortalManager : MonoBehaviour
 
         if (PlayerPrefab != null)
             PlayerPrefab.position = pos;
-        else
-            Debug.LogWarning("PortalManager: Player transform is not assigned.");
 
         if (npc != null)
             npc.position = pos + (Vector3)exitOffsetFromPortal;
-
-        Debug.Log("Correct portal! Back to real world.");
     }
 
     private void TeleportToRandomOtherPortal(TeleportalController enteredPortal)
@@ -189,7 +440,6 @@ public class PortalManager : MonoBehaviour
         if (_portals.Count <= 1 || enteredPortal == null)
             return;
 
-        // Choose from portals that are not the one we just entered
         List<TeleportalController> others = new List<TeleportalController>(_portals);
         others.Remove(enteredPortal);
 
@@ -202,65 +452,8 @@ public class PortalManager : MonoBehaviour
 
         if (PlayerPrefab != null)
             PlayerPrefab.position = pos;
-        else
-            Debug.LogWarning("PortalManager: Player transform is not assigned.");
 
         if (npc != null)
             npc.position = pos;
-
-        Debug.Log("Wrong portal! Looped to another one.");
     }
-}
-
-/// --------- FACTORY + STRATEGY IMPLEMENTATIONS ----------
-
-public interface IPortalFactory
-{
-    TeleportalController CreatePortal(Vector3 position);
-}
-
-public class PrefabPortalFactory : IPortalFactory
-{
-    private readonly GameObject _portalPrefab;
-
-    public PrefabPortalFactory(GameObject portalPrefab)
-    {
-        _portalPrefab = portalPrefab;
-    }
-
-    public TeleportalController CreatePortal(Vector3 position)
-    {
-        if (_portalPrefab == null)
-        {
-            Debug.LogWarning("PrefabPortalFactory: Portal prefab is not assigned.");
-            return null;
-        }
-
-        GameObject portalGO = Object.Instantiate(_portalPrefab, position, Quaternion.identity);
-        TeleportalController portal = portalGO.GetComponent<TeleportalController>();
-
-        if (portal == null)
-        {
-            Debug.LogWarning("PrefabPortalFactory: Portal prefab is missing TeleportalController component.");
-        }
-
-        return portal;
-    }
-}
-
-public interface ICorrectPortalSelector
-{
-    TeleportalController SelectCorrectPortal(IReadOnlyList<TeleportalController> portals);
-}
-
-public class RandomCorrectPortalSelector : ICorrectPortalSelector
-{
-    public TeleportalController SelectCorrectPortal(IReadOnlyList<TeleportalController> portals)
-    {
-        if (portals == null || portals.Count == 0)
-            return null;
-
-        int index = Random.Range(0, portals.Count);
-        return portals[index];
-    }
-}
+}*/

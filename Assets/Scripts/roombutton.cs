@@ -7,10 +7,12 @@ public class roombutton : MonoBehaviour
 {
     // The button GameObject or its parent container (CanvasGroup is best)
     // Drag your button here in the Inspector!
-    public GameObject buttonToAppear; 
+    public GameObject buttonToAppear;
 
     // Time delay in seconds (made it float for better compatibility with WaitForSeconds)
-    public float delay = 10f; 
+    public float delay = 5f;
+    float timer = 0f;
+
 
     void Awake()
     {
@@ -18,19 +20,16 @@ public class roombutton : MonoBehaviour
         if (buttonToAppear != null)
         {
             buttonToAppear.SetActive(false);
+            StartCoroutine(ShowButtonAfterDelay());
         }
     }
 
-    void Start()
-    {
-        // 2. Start the timer
-        StartCoroutine(ShowButtonAfterDelay());
-    }
+
 
     IEnumerator ShowButtonAfterDelay()
     {
         Debug.Log("Waiting for " + delay + " seconds...");
-        
+
         // Wait for the specified delay
         yield return new WaitForSeconds(delay);
 
@@ -46,6 +45,11 @@ public class roombutton : MonoBehaviour
     public void OnButtonClick()
     {
         // 4. Load the scene
-        SceneManager.LoadScene("Post-apocalyptic"); 
+        SceneManager.LoadScene("Post-apocalyptic Scene");
+    }// -35.78     -31TOP  1.68BOTOM
+
+    void loadscene()
+    {
+        SceneManager.LoadScene("Post-apocalyptic Scene");
     }
 }

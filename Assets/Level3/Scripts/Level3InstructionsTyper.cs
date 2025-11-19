@@ -71,6 +71,7 @@ public class Level3InstructionsTyper : MonoBehaviour
         {
             // Unload only THIS additive scene
             SceneManager.UnloadSceneAsync(gameObject.scene);
+            SceneManager.LoadScene("Zone5");
         }
     }
 }

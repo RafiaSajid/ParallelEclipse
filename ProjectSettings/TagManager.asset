@@ -4,30 +4,28 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - zombie
   - layer 3
   - layer 4
-  - layer 2
   - Background
+  - layer 2
   - layer 1
-  - NPC
   - campfire
-  - zombie
-  - health
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - background
+  - layer0
   - Water
   - UI
-  - midground
-  - Ground
-  - campEssential
+  - layer1
+  - layer2
+  - layer3
+  - layer4
   - Player
-  - Enemy
   - NPC
-  - 
-  - 
+  - zombie
+  - pickup
   - 
   - 
   - 
@@ -50,28 +48,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
-    uniqueID: 2289175277
+  - name: New Layer 0
+    uniqueID: 3916031293
     locked: 0
-  - name: midground
-    uniqueID: 2427006735
+  - name: New Layer 1
+    uniqueID: 3457620817
     locked: 0
-  - name: foreground
-    uniqueID: 1711213073
+  - name: New Layer 2
+    uniqueID: 1783903617
     locked: 0
-  - name: campEssential
-    uniqueID: 4005230117
+  - name: New Layer 3
+    uniqueID: 4148667703
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 3096164081
     locked: 0
   - name: Player
-    uniqueID: 3942662385
-    locked: 0
-  - name: Zombie
-    uniqueID: 4121698991
+    uniqueID: 3594020717
     locked: 0
   - name: NPC
-<<<<<<< HEAD
-    uniqueID: 1839498525
-=======
-    uniqueID: 2530546915
->>>>>>> restore-my-work
+    uniqueID: 2695789531
+    locked: 0
+  - name: zombie
+    uniqueID: 2832158269
     locked: 0

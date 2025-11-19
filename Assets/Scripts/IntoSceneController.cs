@@ -5,11 +5,11 @@ public class IntroSceneController : MonoBehaviour
 {
     [Header("Scene Settings")]
     [Tooltip("Name of the next scene to load after intro")]
-    public string nextSceneName = "MainMenu";
+    private string nextSceneName = "MainMenu";
 
     [Header("Timing")]
     [Tooltip("Time in seconds before switching to the next scene")]
-    public float delayBeforeLoad = 8f;
+    private float delayBeforeLoad = 15f;
 
     [Header("Audio")]
     [Tooltip("Audio to play with the intro title")]

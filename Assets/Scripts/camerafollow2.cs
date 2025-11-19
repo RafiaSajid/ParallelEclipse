@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class camerafollow2 : MonoBehaviour
 {
-   public Transform target;
+    public Transform target;
     public float followSpeed = 6f;
-    public float xOffset = 23.7f;
+    public float xOffset = 16f;
     public float yOffset = 6.5f;
 
     // Camera limits (adjust based on your level design)
-    public float minX = -9f; // leftmost boundary
-    public float maxX = 50f;   // rightmost boundary
-    public float minY = 0f;     // bottom limit
-    public float maxY = 20f;    // top limit
+    public float minX = 2.57f; // leftmost boundary
+    public float maxX = 60.2f;   // rightmost boundary
+    public float minY = -0.88f;     // bottom limit
+    public float maxY = 0.36f;    // top limit
 
     void LateUpdate()
     {
